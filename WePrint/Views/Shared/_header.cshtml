@@ -1,0 +1,107 @@
+﻿
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>header</title>
+    <link rel="stylesheet" type="text/css" href="~/css/header.css">
+    <link rel="stylesheet" type="text/css" href="~/css/index.css">
+    <link rel="stylesheet" type="text/css" href="~/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="~/css/sign.css">
+    <link rel="stylesheet" type="text/css" href="~/css/designnow.css">
+    <link rel="stylesheet" type="text/css" href="~/css/editor.css">
+    <link rel="stylesheet" type="text/css" href="~/css/shop.css">
+    <link rel="stylesheet" type="text/css" href="~/css/product.css">
+    <link rel="stylesheet" type="text/css" href="~/css/shopnow.css">
+    <link rel="stylesheet" type="text/css" href="~/css/cart.css">
+    <link rel="stylesheet" type="text/css" href="~/css/chat.css">
+    <link rel="stylesheet" type="text/css" href="~/css/setting.css">
+    <link rel="icon" type="text/css" href="~/images/tab.png">
+
+    <style type="text/css">
+
+        #intro {
+            background-image: url(images/intro.png);
+            background-size: cover;
+        }
+
+        #signup {
+            background-image: url(images/signupbg.png);
+            background-size: cover;
+        }
+
+            #signup button {
+                background-image: linear-gradient(to right, #009ee3, #071e34);
+            }
+
+        #signin {
+            background-image: url(images/loginbg.png);
+            background-size: cover;
+        }
+
+            #signin button {
+                background-image: linear-gradient(to right, #ff5cb7, #ffff00);
+            }
+    </style>
+
+</head>
+<body>
+    <div id="header">
+
+        <div class="dropdown-box2">
+            <button class="dropbtn2"><img src="~/images/menu.png"></button>
+
+            <div class="dropdown-content2">
+
+                <div class="pages"><a href="index.php">Home</a></div>
+                <div class="pages"><a href="shopnow.php" id="snow">Shop Now!</a></div>
+                <div class="pages"><a href="editor.php" id="dnow">Design Now!</a></div>
+                <div class="pages"><a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="AboutUs">About Us</a></div>
+                <div class="pages"><a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="ContactUs">Contact Us</a></div>
+                <div class="pages"><a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="TermsAndServices">Terms and Services</a></div>
+
+
+            </div>
+        </div>
+
+
+
+        <div id="logo"><a href="index.php"><img src="~/images/logo.png"></a></div>
+
+        <div id='tools'>
+            <div class='cart'><a href='cart.php'><img src='~/images/cart.png'></a></div>
+            <div class='cart'><a href='setting.php'><img src='~/images/setting.png'></a></div>
+            <form action='includes/logout.inc.php'><button type='submit' name='signout'>Log Out</button></form>
+        </div>
+
+
+        <div class='dropdown-box'>
+            <button class='dropbtn'>Log in/Register <span> &#8964;</span></button>
+            <div class='dropdown-content'>
+                <button id='btnSignin'>Sign in</button>
+                <button id='btnSignup'>Register</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <div id="footer">
+        <div id="wrapper">
+            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="AboutUs">About Us</a>
+            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="ContactUs">Contact Us</a>
+            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="TermsAndServices">Terms and Services</a>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>

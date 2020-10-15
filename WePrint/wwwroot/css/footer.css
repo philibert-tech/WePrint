@@ -1,0 +1,37 @@
+#footer{
+height: 100px;
+  width:100%;
+  background-color: rgb(0,0,0);
+    margin-top: 10px;
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: space-around;
+}
+
+#footer #wrapper{
+
+  width:70%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 15%;
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: space-around;
+
+}
+
+
+#footer #wrapper a{
+
+  width:20%;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  font-family: calibri;
+
+  
+}

@@ -1,0 +1,63 @@
+h1{
+	text-align:center;
+	color: #009ee3;
+	font-family: century gothic;
+	font-size: 36px;
+	margin: 0px;
+	line-height: 100px;
+}
+
+#back{
+
+  width:5%;
+  position: fixed;
+  z-index: 1;
+  top:1%;
+  left:1;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+p{
+	color: black;
+	text-align: center;
+	font-family: century gothic;
+	margin-left: 140px;
+	margin-right: 130px;
+	margin-top: 40px;
+	font-size: 20px;
+}
+
+h2{
+  color: #071e34;
+  font-family: haroopath;
+  
+  text-align:center;
+} 
+
+ h3{
+	 
+	 font-family: century;
+	 line-height: 25px;
+	 text-align:center;
+ }
+ 
+ ::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 10px grey; 
+  border-radius: 5px;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #009ee3; 
+  border-radius: 40px;
+  box-shadow: inset 0 0 10px #0164af;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #071e34;
+  box-shadow: inset 0 0 10px #00243f;
+}

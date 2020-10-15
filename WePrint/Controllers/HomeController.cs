@@ -28,6 +28,36 @@ namespace WePrint.Controllers
             return View();
         }
 
+        public ActionResult ShopNow()
+        {
+            return View();
+        }
+
+        public ActionResult Editor()
+        {
+            return View();
+        }
+
+        public ActionResult Settings()
+        {
+            return View();
+        }
+
+        public ActionResult ContactUs()
+        {
+            return View();
+        }
+
+        public ActionResult AboutUs()
+        {
+            return View();
+        }
+
+        public ActionResult TermsAndServices()
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

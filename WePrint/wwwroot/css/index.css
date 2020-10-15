@@ -1,0 +1,110 @@
+#menu{
+
+	width: 50%;
+	margin-left: 25%;
+	margin-top: 20px;
+
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: space-around;
+
+}
+
+#menu a {
+width: 35%;
+}
+
+#menu a img{
+width: 100%;
+
+}
+#intro {
+	background-color: rgb(0,0,0);
+	margin-top: 80px;
+	width: 70%;
+	margin-left: 15%;
+	font-family: century gothic;
+		display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: space-around;
+	margin-bottom: 40px;
+border-radius: 10px
+}
+
+
+
+
+#intro p{
+	width: 60%;
+	font-size: 24px;
+	text-align: center;
+font-weight: bold;
+}
+
+.line{
+	width: 80%;
+	margin-left: 10%;
+	margin-top:40px;
+			display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: space-around;
+
+}
+
+.line hr{
+	width: 30%
+}
+
+.line p{
+	text-align: center;
+	font-size: 40px;
+	font-family: calibri;
+}
+
+#anime{
+
+	width:50%;
+	margin-left: 25%;
+	background-color: #081e35;
+}
+
+#anime video{
+
+	width:100%;
+
+}
+
+#services{
+
+	width: 50%;
+margin-left: 25%;
+display: flex;
+	justify-content: space-around;
+	align-items: center;
+	align-content: space-around;	
+
+}
+
+#services .content{
+
+	width: 30%;
+	
+}
+
+#services .content img{
+
+	width: 100%;
+	
+}
+
+#services .content p{
+margin-top: 5px;
+	text-align: center;
+	
+}

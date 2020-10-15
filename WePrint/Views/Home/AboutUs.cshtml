@@ -1,0 +1,99 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/css/aboutus.css">
+
+    <title>About Us</title>
+    <style>
+        body {
+            background-image: url('~/images/layoutsignupbg.png');
+            background-repeat: repeat-y;
+            background-attachment: fixed;
+            background-position: left;
+        }
+
+        * {
+            box-sizing: center;
+        }
+
+        .column {
+            float: left;
+            width: 20%;
+            padding: 2px;
+            margin-left: 140px;
+        }
+
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">
+        <img id="back" src="~/images/back.png" title="Back">
+    </a>
+
+    <h1>ABOUT US</h1>
+
+    <h2>Hello! We are WePrint,</h2>
+    <p>A Mauritian online custom store that allows you to personalise items to your choice and to buy products online.</p>
+
+    <p>
+        By using WePrint, you will be able to customise a list of products to add something special to your events,
+        be it, Birthdays, Baby Showers, Team Buildings, Awareness Campaigns and so much more!
+    </p>
+
+    <p>
+        The <b>Shop</b> is full of ready to buy products carefully made by our team and the <b>Design Editor</b> is
+        a ready-to-use platform where <b>YOU</b> design what <b>YOU</b> desire.
+    </p>
+
+    <p>At WePrint, we put our customer first, which is why we offer a chat service on the website for instant assistance. </p>
+
+    <p>
+        We also offer a secure way of payment directly on the site, and a free delivery service to anywhere on the island
+        during 5 working days. This way, you don’t have to move to place your order!
+    </p>
+    <br>
+
+    <div class="row">
+        <div class="column">
+            <img src="~/images/awareness1.png" alt="Snow" style="width:100%">
+        </div>
+        <div class="column">
+            <img src="~/images/awareness2.png" alt="Forest" style="width:100%">
+        </div>
+        <div class="column">
+            <img src="~/images/FAMILY1.png" alt="Mountains" style="width:100%">
+        </div>
+        <div class="column">
+            <img src="~/images/teamb1.png" alt="Snow" style="width:100%">
+        </div>
+        <div class="column">
+            <img src="~/images/teamb2.png" alt="Forest" style="width:100%">
+        </div>
+        <div class="column">
+            <img src="~/images/teamb3.png" alt="Mountains" style="width:100%">
+        </div>
+    </div>
+
+    <h3>How to custom? Easy!</h3>
+    <p><i>Choose your item among Tshirts, Tote Bags, Pens, Posters, Caps or Mugs.</p>
+    <p>Create your design through our editor.</p>
+    <p>Then, WePrint it!</i></p>
+    <br>
+    <br>
+    </body>
+
+</html>
