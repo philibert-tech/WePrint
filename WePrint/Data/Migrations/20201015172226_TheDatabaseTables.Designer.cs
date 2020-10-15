@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WePrint.Data;
 
 namespace WePrint.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201015172226_TheDatabaseTables")]
+    partial class TheDatabaseTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -82,10 +84,6 @@ namespace WePrint.Data.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(256)")
                         .HasMaxLength(256);
@@ -137,8 +135,6 @@ namespace WePrint.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
-
-                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityUser");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -225,180 +221,6 @@ namespace WePrint.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("WePrint.Data.Account", b =>
-                {
-                    b.Property<string>("AccountId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("BillingAddress")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<long>("CardNumber")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("CustomerId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("Cvv")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("ExpiryDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("AccountId");
-
-                    b.HasIndex("CustomerId");
-
-                    b.ToTable("Accounts");
-                });
-
-            modelBuilder.Entity("WePrint.Data.Cart", b =>
-                {
-                    b.Property<string>("CartId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("CustomerId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<DateTime>("DateInserted")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("ProductId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Size")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("TotalPrice")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("CartId");
-
-                    b.HasIndex("CustomerId");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("Carts");
-                });
-
-            modelBuilder.Entity("WePrint.Data.Category", b =>
-                {
-                    b.Property<string>("CategoryId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("CategoryId");
-
-                    b.ToTable("Categories");
-                });
-
-            modelBuilder.Entity("WePrint.Data.Chat", b =>
-                {
-                    b.Property<string>("ChatId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("CustomerId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<DateTime>("DateSent")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Messsage")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Writer")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("ChatId");
-
-                    b.HasIndex("CustomerId");
-
-                    b.ToTable("Chats");
-                });
-
-            modelBuilder.Entity("WePrint.Data.Order", b =>
-                {
-                    b.Property<string>("OrderId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("CustomerId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("ProductId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.Property<string>("SizeChoosen")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Status")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("TotalPrice")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("OrderId");
-
-                    b.HasIndex("CustomerId");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("Orders");
-                });
-
-            modelBuilder.Entity("WePrint.Data.Product", b =>
-                {
-                    b.Property<string>("ProductId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("CategoryId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Decoration")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Gender")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImgPath")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Material")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<string>("Size")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("ProductId");
-
-                    b.HasIndex("CategoryId");
-
-                    b.ToTable("Products");
-                });
-
-            modelBuilder.Entity("WePrint.Data.Customer", b =>
-                {
-                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
-
-                    b.Property<DateTime>("LastLogged")
-                        .HasColumnType("datetime2");
-
-                    b.HasDiscriminator().HasValue("Customer");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -448,49 +270,6 @@ namespace WePrint.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("WePrint.Data.Account", b =>
-                {
-                    b.HasOne("WePrint.Data.Customer", "Customer")
-                        .WithMany()
-                        .HasForeignKey("CustomerId");
-                });
-
-            modelBuilder.Entity("WePrint.Data.Cart", b =>
-                {
-                    b.HasOne("WePrint.Data.Customer", "Customer")
-                        .WithMany()
-                        .HasForeignKey("CustomerId");
-
-                    b.HasOne("WePrint.Data.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId");
-                });
-
-            modelBuilder.Entity("WePrint.Data.Chat", b =>
-                {
-                    b.HasOne("WePrint.Data.Customer", "Customer")
-                        .WithMany()
-                        .HasForeignKey("CustomerId");
-                });
-
-            modelBuilder.Entity("WePrint.Data.Order", b =>
-                {
-                    b.HasOne("WePrint.Data.Customer", "Customer")
-                        .WithMany()
-                        .HasForeignKey("CustomerId");
-
-                    b.HasOne("WePrint.Data.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId");
-                });
-
-            modelBuilder.Entity("WePrint.Data.Product", b =>
-                {
-                    b.HasOne("WePrint.Data.Category", "Category")
-                        .WithMany()
-                        .HasForeignKey("CategoryId");
                 });
 #pragma warning restore 612, 618
         }
